@@ -12,7 +12,8 @@ then
 else
 	url=`wget -qO- https://api.github.com/repos/appfront/cli/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4`
 	echo "installing..."
-	wget -qO- $url"_linux" > /usr/local/bin/appfront
+	curl -L -o appfront $url
+	mv ./appfront /usr/local/bin/appfront
 	chmod +x /usr/local/bin/appfront
 fi
 
