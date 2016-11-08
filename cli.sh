@@ -8,7 +8,7 @@ then
 	echo "installing..."
 	curl -sS $url > appfront_mac
 	sudo mv ./appfront_mac /usr/local/bin/appfront
-	chmod +x /usr/local/bin/appfront
+	sudo chmod +x /usr/local/bin/appfront
 else
 	url=`wget -qO- https://api.github.com/repos/appfront/cli/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4`
 	echo "installing..."
