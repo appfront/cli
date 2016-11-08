@@ -6,7 +6,7 @@ if [ $sys = "Darwin" ]
 then
 	url=`curl -s https://api.github.com/repos/appfront/cli/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4`
 	echo "installing..."
-	curl -sS $url > appfront_mac
+	curl -L -o appfront_mac $url
 	sudo mv ./appfront_mac /usr/local/bin/appfront
 	sudo chmod +x /usr/local/bin/appfront
 else
